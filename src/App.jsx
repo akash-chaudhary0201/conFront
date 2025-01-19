@@ -40,11 +40,13 @@ const FileUpload = () => {
     try {
       const response = await axios.post(
         "https://con-back.vercel.app/upload",
+
         formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
           },
+          withCredentials: true,
         }
       );
       setMessage(response.data.message);
